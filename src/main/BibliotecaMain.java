@@ -22,7 +22,7 @@ public class BibliotecaMain {
         RelatorioView relatorioView = new RelatorioViewImpl(relatorioController);
 
         Scanner scanner = new Scanner(System.in);
-        
+
         while (true) {
             System.out.println("---- Menu Biblioteca ----");
             System.out.println();
@@ -266,6 +266,37 @@ public class BibliotecaMain {
     private static void adicionarItem(Scanner scanner) {
         // Lógica para adicionar um novo item
         System.out.println("Operação de Adição de Item");
+        
+        System.out.print("Título: ");
+        String titulo = scanner.nextLine();
+        System.out.print("Autor: ");
+        String autor = scanner.nextLine();
+        System.out.print("Editora: ");
+        String editora = scanner.nextLine();
+        System.out.print("Ano de publicação: ");
+        int anoPublicacao = scanner.nextInt();
+        scanner.nextLine();
+        System.out.print("Genero: ");
+        String genero = scanner.nextLine();
+        System.out.print("Detalhes: ");
+        String detalhes = scanner.nextLine();
+        System.out.print("Copias: ");
+        int copias = scanner.nextInt();
+        scanner.nextLine();
+
+        System.out.print("ISBN: ");
+        String isbn = scanner.nextLine();
+        System.out.print("Edicao: ");
+        int edicao = scanner.nextInt();
+        scanner.nextLine();
+        
+        Livro livro = new Livro(
+        		titulo, autor, editora, anoPublicacao, genero, detalhes, copias, isbn, edicao
+        );
+        bibliotecaController.adicionarItem(livro);
+        
+        System.out.println("✔ Item adicionado!");
+        System.out.println();
     }
 
     private static void editarItem(Scanner scanner) {

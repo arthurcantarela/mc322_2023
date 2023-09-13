@@ -8,6 +8,7 @@ import biblioteca.views.BibliotecaView;
 
 public interface BibliotecaController {
     List<ItemMultimidia> consultarItensDisponiveis();
+    void adicionarItem(ItemMultimidia item);
     boolean emprestarItem(Membro membro, ItemMultimidia item);
     boolean devolverItem(Membro membro, ItemMultimidia item);
 }

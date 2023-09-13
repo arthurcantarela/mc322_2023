@@ -12,6 +12,11 @@ public class BibliotecaControllerImpl implements BibliotecaController {
     public BibliotecaControllerImpl() {
         itens = new ArrayList<>();
     }
+    
+    @Override
+	public void adicionarItem(ItemMultimidia item) {
+		itens.add(item);
+	}
 
     @Override
     public List<ItemMultimidia> consultarItensDisponiveis() {
